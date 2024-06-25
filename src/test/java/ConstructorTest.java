@@ -43,7 +43,7 @@ public class ConstructorTest {
         mainPage.waitForLoadMainPage();
         mainPage.fillingsSectionClick();
         mainPage.bunsSectionClick();
-        Assert.assertTrue(mainPage.bunImageIsVisible());
+        Assert.assertTrue(mainPage.bunSectionActiveButtonIsVisible());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class ConstructorTest {
         driver.get(BASE_URL);
         mainPage.waitForLoadMainPage();
         mainPage.saucesSectionClick();
-        Assert.assertTrue(mainPage.sauceImageIsVisible());
+        Assert.assertTrue(mainPage.sauceSectionButtonIsVisible());
     }
 
     @Test
@@ -67,6 +67,6 @@ public class ConstructorTest {
         driver.get(BASE_URL);
         mainPage.waitForLoadMainPage();
         mainPage.fillingsSectionClick();
-        Assert.assertTrue(mainPage.fillingImageIsVisible());
+        Assert.assertTrue(mainPage.fillingSectionButtonIsVisible());
     }
 }

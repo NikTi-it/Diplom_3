@@ -17,9 +17,12 @@ public class MainPage {
     private final By saucesSection = By.xpath(".//span[text()='Соусы']");
     private final By fillingSection = By.xpath(".//span[text()='Начинки']");
     private final By placeOrderButton = By.xpath("//button[text()='Оформить заказ']");
-    private final By bunImage = By.xpath(".//img[@alt = 'Краторная булка N-200i']");
-    private final By sauceImage = By.xpath(".//img[@alt = 'Соус традиционный галактический']");
-    private final By fillingImage = By.xpath(".//img[@alt = 'Мясо бессмертных моллюсков Protostomia']");
+    private final By bunSectionActiveButton = By.xpath("//div[@class='tab_tab__1SPyG " +
+            "tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Булки']");
+    private final By sauceSectionActiveButton = By.xpath("//div[@class='tab_tab__1SPyG " +
+            "tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Соусы']");
+    private final By fillingSectionActiveButton = By.xpath("//div[@class='tab_tab__1SPyG " +
+            "tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']/span[text()='Начинки']");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -64,23 +67,23 @@ public class MainPage {
     }
 
     @Step("Проверка видимости булочки в секции 'Булочки'")
-    public Boolean bunImageIsVisible() {
+    public Boolean bunSectionActiveButtonIsVisible() {
         new WebDriverWait(driver, 5)
-                .until(ExpectedConditions.visibilityOfElementLocated(bunImage));
-        return driver.findElement(bunImage).isDisplayed();
+                .until(ExpectedConditions.visibilityOfElementLocated(bunSectionActiveButton));
+        return driver.findElement(bunSectionActiveButton).isDisplayed();
     }
 
     @Step("Проверка видимости начинки в секции 'Начинки'")
-    public Boolean fillingImageIsVisible() {
+    public Boolean fillingSectionButtonIsVisible() {
         new WebDriverWait(driver, 5)
-                .until(ExpectedConditions.visibilityOfElementLocated(fillingImage));
-        return driver.findElement(fillingImage).isDisplayed();
+                .until(ExpectedConditions.visibilityOfElementLocated(fillingSectionActiveButton));
+        return driver.findElement(fillingSectionActiveButton).isDisplayed();
     }
 
     @Step("Проверка видимости соуса в секции 'Соусы'")
-    public Boolean sauceImageIsVisible() {
+    public Boolean sauceSectionButtonIsVisible() {
         new WebDriverWait(driver, 5)
-                .until(ExpectedConditions.visibilityOfElementLocated(sauceImage));
-        return driver.findElement(sauceImage).isDisplayed();
+                .until(ExpectedConditions.visibilityOfElementLocated(sauceSectionActiveButton));
+        return driver.findElement(sauceSectionActiveButton).isDisplayed();
     }
 }
