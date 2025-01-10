@@ -1,1 +1,1 @@
-Автотесты на Java для сайта https://stellarburgers.nomoreparties.site/
+Автотесты на Java (Maven+Selenium) для фронта сайта https://stellarburgers.nomoreparties.site/
